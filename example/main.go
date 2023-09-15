@@ -79,7 +79,7 @@ func main() {
 	fastLogger.Record(testLogger.Builder().ShowDate().Prefix("[record fast] ").NewLine(true).AppendArgs("Hello, World!").Build())
 	fastLogger.Raw(fastbytes.S2B("[raw fast] Hello, World!\n"))
 
-	prepared := testLogger.Builder().Prefix("[my prefix] ").NewLine(true).AppendArgs("Hello,").Prepare()
+	prepared := testLogger.Builder().Prefix("[my prefix] ").NewLine(true).AppendArgs("Hello, World!").Prepare()
 	fastLogger.InfoPrepare(prepared)
 
 	fastLogger.Fatal("[fatal fast] Hello, World!")
