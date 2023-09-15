@@ -5,7 +5,7 @@ This package provides a convenient tool for logging Go programs. It includes an 
 ## Installation
 
 To install the `logger` package, use the following command:
-`go get github.com/your-username/logger`
+`go get github.com/Eugene-Usachev/logger`
 
 ## Usage
 
