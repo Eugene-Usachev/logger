@@ -89,6 +89,9 @@ func NewStandardLogger(cfg *StandardLoggerConfig) *StandardLogger {
 				buf = append(buf, ':')
 				buf = strconv.AppendInt(buf, int64(min), 10)
 				buf = append(buf, ':')
+				if sec < 10 {
+					buf = append(buf, '0')
+				}
 				buf = strconv.AppendInt(buf, int64(sec), 10)
 				buf = append(buf, ' ')
 				Now.Store(buf)
