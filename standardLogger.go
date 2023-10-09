@@ -81,12 +81,24 @@ func NewStandardLogger(cfg *StandardLoggerConfig) *StandardLogger {
 				hour, min, sec := date.Clock()
 				buf = strconv.AppendInt(buf, int64(year), 10)
 				buf = append(buf, '/')
+				if month < 10 {
+					buf = append(buf, '0')
+				}
 				buf = strconv.AppendInt(buf, int64(month), 10)
 				buf = append(buf, '/')
+				if day < 10 {
+					buf = append(buf, '0')
+				}
 				buf = strconv.AppendInt(buf, int64(day), 10)
 				buf = append(buf, ' ')
+				if hour < 10 {
+					buf = append(buf, '0')
+				}
 				buf = strconv.AppendInt(buf, int64(hour), 10)
 				buf = append(buf, ':')
+				if min < 10 {
+					buf = append(buf, '0')
+				}
 				buf = strconv.AppendInt(buf, int64(min), 10)
 				buf = append(buf, ':')
 				if sec < 10 {
