@@ -1,6 +1,7 @@
 package logger
 
 import (
+	"runtime"
 	"strconv"
 	"sync/atomic"
 )
