@@ -68,6 +68,11 @@ func addArgsToLog(buf []byte, args ...interface{}) []byte {
 		case uintptr:
 			buf = strconv.AppendUint(buf, uint64(args[i].(uintptr)), 10)
 			break
+		case error:
+			buf = append(buf, args[i].(error).Error()...)
+			break
+		case runtime.Error:
+			buf = append(buf, args[i].(runtime.Error).Error()...)
 		default:
 			buf = append(buf, args[i].(string)...)
 			break
